@@ -20,41 +20,45 @@
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
 
             <div class="mt-8 bg-white overflow-hidden shadow sm:rounded-lg">
-                    @if (session('message')) 
-                        <div class="alert alert-success text-center">   
-                          {{ session('message') }} 
-                        </div> 
-                    @endif
-                    <div class="class-custom-css">
-                        <div class="p-6 col-md-6">
-                            <form action="{{url('/import_file/')}}" method="POST" enctype="multipart/form-data">
-                                @csrf
-                                <div class="form-group">
-                                    <label for="file_import1">Fattura</label>
-                                    <input 
-                                      type="file" 
-                                      name="file_import1" 
-                                      id="file_import1"
-                                      class="form-control mb-3"
-                                      accept=".xml"
-                                      required
-                                    />
-                                </div>
-                                <div class="form-group">
-                                    <label for="file_import2">Allegato</label>
-                                    <input 
-                                       type="file" 
-                                       name="file_import2" 
-                                       id="file_import2" 
-                                       class="form-control"
-                                       required
-                                    />
-                                </div>
-                        
-                                <button type="submit" class="btn btn-primary mt-3">Elabora</button>
-                            </form>
+                    @if (session('error'))
+                        <div class="alert alert-danger text-center"> 
+                          {{ session('error') }} 
                         </div>
-                    </div>
+                    @endif  
+                    <h1 class="text-center my-4 ms-5">Eleborazione fatture</h1 class="text-center my-4">
+                    <form action="{{url('/import_file/')}}" method="POST" enctype="multipart/form-data" class="class-custom-css p-3">
+                        @csrf
+                        <div class="row flex-column align-items-center">
+                            <div class="form-group col-md-6">
+                                <label for="file_import1">
+                                    <div class="text">Carica una fattura</div>
+                                    <input 
+                                        type="file" 
+                                        name="file_import1" 
+                                        id="file_import1"
+                                        class="form-control mb-3"
+                                        accept=".xml"
+                                        required
+                                    />
+                                </label>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="file_import2">
+                                    <div class="text">Carica un allegato</div>
+                                    <input 
+                                        type="file" 
+                                        name="file_import2" 
+                                        id="file_import2" 
+                                        class="form-control"
+                                        hidden
+    
+                                    />
+                                </label>
+                            </div>
+                            {{-- <p class="text-success p-3"> {{session('message') }}</p> --}}
+                            <button type="submit" class="btn btn-primary mt-5 col-md-6 ms-5 fs-4">Elabora</button>
+                        </div>
+                    </form>
                 </div>
         </div>
         <script src="{{ asset('js/app.js') }}" defer></script>

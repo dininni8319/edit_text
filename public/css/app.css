@@ -11,3 +11,33 @@ label {
   width: 40vw;
   height: 50vh;
 }
+
+input[type="file"] {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.text {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F1F1F1;
+  border: 2px dotted #8a8787;
+  border-radius: 10px;
+}
+
+label {
+  display: inline-block;
+  position: relative;
+  height: 70px;
+  width: 400px;
+}
