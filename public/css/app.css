@@ -1,1 +1,13 @@
+body {
+  font-family: 'Nunito', sans-serif;
+  box-sizing: border-box;
+}
 
+label {
+  margin: 5px 0;
+}
+
+.class-custom-css {
+  width: 40vw;
+  height: 50vh;
+}
