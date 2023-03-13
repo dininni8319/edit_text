@@ -47,11 +47,11 @@
                                     <div class="text">Carica un allegato</div>
                                     <input 
                                         type="file" 
-                                        name="file_import2" 
+                                        name="file_import2[]" 
                                         id="file_import2" 
                                         class="form-control"
                                         hidden
-    
+                                        multiple
                                     />
                                 </label>
                             </div>
