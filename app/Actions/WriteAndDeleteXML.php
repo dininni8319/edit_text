@@ -10,6 +10,7 @@ class WriteAndDeleteXML
     foreach ($files as $key => $file) {
       $fileName2 = $file->getClientOriginalName();
       $file->move("temp/"."fatture/", $fileName2);
+      
       // we are getting the original name and the extension of the attachment
       $fileExtension = substr($fileName2, strrpos($fileName2, '.') + 1);;
       $fileNameOriginal = substr($fileName2, 0, strrpos( $fileName2, '.'));
